@@ -2,15 +2,15 @@ var express = require('express');
 var app = express();
 
 app.get('/', function(req, res) {
-    res.send('Una API basica desde Express');
+    res.send('Una API desde Express');
 });
 
 
-app.get('/', function(req, res) {
+app.get('/saludo', function(req, res) {
     res.send('Hola desde la API');
 });
 
-app.get('/', function(req, res) {
+app.get('/despedida', function(req, res) {
     res.send('Adios desde de una API');
 });
 
