@@ -40,3 +40,13 @@ app.post('/users', (request, response) => {
   });
 });
 
+//Actualizar un usuario existente
+app.put('/users/:id', (request, response) => {
+  const id = request.params.Id;
+
+  pool.query('UPDATE users SET ? WHERE id = ?', (request, body,id), (error,result) =>{
+    if (error) throw error;
+    response.send('user updated seccesdfully');
+  });
+})
+
