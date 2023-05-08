@@ -50,3 +50,13 @@ app.put('/users/:id', (request, response) => {
   });
 })
 
+//Eliminar un usuario 
+app.delete('/users/:id', (request, response) => {
+  const id = request.params.Id;
+
+  pool.query('DELETE FROM users WHERE id = ?', Id, (error, result) => {
+    if (error) throw error;
+    response.send('User deleted.');
+
+  });
+});
